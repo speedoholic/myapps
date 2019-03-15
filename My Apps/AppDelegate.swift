@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManager
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.shared().isEnabled = true
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
+        registerForNotifications()
         return true
+    }
+    
+    func registerForNotifications() {
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound, .badge]) {
+                granted, error in
+                print("Permission granted: \(granted)")
+        }
+    }
+    
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if let navigationController = window?.rootViewController as? UINavigationController {
+            for viewController in navigationController.viewControllers {
+                if let homeTableViewController = viewController as? HomeTableViewController {
+                    homeTableViewController.fetchForFirstApp(completionHandler)
+                }
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
