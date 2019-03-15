@@ -15,12 +15,13 @@ public class MyApp: Object, Mappable, RealmObject {
     @objc dynamic var bundleId = ""
     @objc dynamic var sellerName = ""
     @objc dynamic var version = ""
-    @objc dynamic var name = ""
-    @objc dynamic var itunesUrlString = ""
+    @objc dynamic var trackName = ""
+    @objc dynamic var trackViewUrl = ""
     @objc dynamic var releaseNotes = ""
-    @objc dynamic var appdDescription = ""
-    @objc dynamic var genre = ""
-    @objc dynamic var releaseDateString = ""
+    @objc dynamic var appDescription = ""
+    @objc dynamic var primaryGenreName = ""
+    @objc dynamic var releaseDate = ""
+    @objc dynamic var artworkUrl512 = ""
     
     required convenience public init?( map: Map) {
         self.init()
@@ -34,12 +35,13 @@ public class MyApp: Object, Mappable, RealmObject {
         bundleId <- map["bundleId"]
         sellerName <- map["sellerName"]
         version <- map["version"]
-        name <- map["name"]
-        itunesUrlString <- map["itunesUrlString"]
+        trackName <- map["trackName"]
+        trackViewUrl <- map["trackViewUrl"]
         releaseNotes <- map["releaseNotes"]
-        appdDescription <- map["description"]
-        genre <- map["genre"]
-        releaseDateString <- map["releaseDateString"]
+        appDescription <- map["description"]
+        primaryGenreName <- map["primaryGenreName"]
+        releaseDate <- map["releaseDate"]
+        artworkUrl512 <- map["artworkUrl512"]
         self.update()
     }
     

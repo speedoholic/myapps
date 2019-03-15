@@ -31,8 +31,8 @@ class AddAppViewController: UIViewController {
         if let name = nameTextField?.text,
             let bundleId = bundleIdTextField?.text {
             print("Addin app \(name) with bundle ID: \(bundleId)")
-            var newApp = MyApp()
-            newApp.name = name
+            let newApp = MyApp()
+            newApp.trackName = name
             newApp.bundleId = bundleId
             addAppDelegate?.addApp(newApp)
             self.navigationController?.popViewController(animated: true)

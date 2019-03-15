@@ -98,7 +98,7 @@ extension NetworkAPI: NetworkTargetType {
 }
 
 protocol Requestable: class {
-    func setupNetworkComponentWith<T: Mappable>(netapi: NetworkAPI, mapType: T.Type, hideProgressHUD:Bool, mappedObjectHandle: ((_ object: T) -> Void)?, moreInfo: ((_ message: CSMessage) -> Void)?, shouldLogMetrics: Bool) -> Request
+    func setupNetworkComponentWith<T: Mappable>(netapi: NetworkAPI, mapType: T.Type, hideProgressHUD:Bool, mappedObjectHandle: ((_ object: T) -> Void)?, moreInfo: ((_ message: CSMessage) -> Void)?) -> Request
 }
 
 extension Requestable where Self: NSObject {

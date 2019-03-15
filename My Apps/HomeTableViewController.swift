@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MJRefresh
 
 class HomeTableViewController: UITableViewController {
 
@@ -17,11 +18,17 @@ class HomeTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = self.editButtonItem
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addAppButtonTapped))
-        var tradeXApp = MyApp()
-        tradeXApp.bundleId = "com.tradexport.tradex"
-        tradeXApp.name = "TRADE X GLOBAL"
-        myApps.append(tradeXApp)
-        tableView.register(AppTableViewCell.self, forCellReuseIdentifier: "AppTableViewCell")
+        tableView.mj_header = MJRefreshNormalHeader(refreshingBlock: {[weak self] ()->() in
+            self?.getDataForApps()
+        })
+        reload()
+    }
+    
+    func reload() {
+        if let appsList = realmHelper.getObjects(MyApp.self, filterString: nil) {
+            myApps = Array(appsList)
+        }
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -39,7 +46,13 @@ class HomeTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "AppTableViewCell", for: indexPath) as? AppTableViewCell else {
             return UITableViewCell()
         }
-        cell.textLabel?.text = myApps[indexPath.row].name
+        let appForCell = myApps[indexPath.row]
+        cell.nameLabel?.text = appForCell.trackName
+        cell.descriptionLabel?.text = appForCell.bundleId
+        cell.infoLabel?.text = appForCell.version
+        if let imageUrl = URL(string: appForCell.artworkUrl512) {
+            cell.appImageView.af_setImage(withURL: imageUrl)
+        }
         return cell
     }
 
@@ -51,15 +64,15 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
+            
+            // Delete the row from the data source and UI
+            let deletedAppId = myApps[indexPath.row].bundleId
             myApps.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-            let newApp = MyApp()
-            myApps.append(newApp)
-            tableView.insertRows(at: [indexPath], with: .automatic)
-        }    
+            
+            // Delete the object from database
+            realmHelper.deleteObjects(MyApp.self, filterString: "bundleId == '\(deletedAppId)'")
+        }
     }
     
 
@@ -105,7 +118,21 @@ class HomeTableViewController: UITableViewController {
 
 extension HomeTableViewController: AddAppDelegate {
     func addApp(_ newApp: MyApp) {
-        myApps.append(newApp)
-        tableView.reloadData()
+        newApp.update()
+        reload()
+    }
+}
+
+extension HomeTableViewController: Requestable {
+    func getDataForApps() {
+        myApps.forEach { (app) in
+            Service.shared.getAppDetails(app.bundleId, mapType: MyAppResponse.self) { [unowned self] (appResponse) in
+                if let trackName = appResponse.results.first?.trackName {
+                    print("Data fetched for \(trackName)")
+                    self.reload()
+                }
+            }
+        }
+        self.tableView.mj_header.endRefreshing()
     }
 }

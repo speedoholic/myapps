@@ -19,6 +19,9 @@
 		2B530945223BE593005BA0B4 /* AppDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B530944223BE593005BA0B4 /* AppDetailsViewController.swift */; };
 		2B530947223BF65C005BA0B4 /* Networkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B530946223BF65C005BA0B4 /* Networkable.swift */; };
 		2B530949223BFEC5005BA0B4 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B530948223BFEC5005BA0B4 /* RealmHelper.swift */; };
+		2B53094B223C01E1005BA0B4 /* MyAppResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53094A223C01E1005BA0B4 /* MyAppResponse.swift */; };
+		2B53094D223C0223005BA0B4 /* ListTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53094C223C0223005BA0B4 /* ListTransform.swift */; };
+		2B53094F223C095E005BA0B4 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B53094E223C095E005BA0B4 /* Common.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		2B530944223BE593005BA0B4 /* AppDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailsViewController.swift; sourceTree = "<group>"; };
 		2B530946223BF65C005BA0B4 /* Networkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networkable.swift; sourceTree = "<group>"; };
 		2B530948223BFEC5005BA0B4 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		2B53094A223C01E1005BA0B4 /* MyAppResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppResponse.swift; sourceTree = "<group>"; };
+		2B53094C223C0223005BA0B4 /* ListTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTransform.swift; sourceTree = "<group>"; };
+		2B53094E223C095E005BA0B4 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		E41D83387D7AB72D557767EB /* Pods-My Apps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Apps.release.xcconfig"; path = "Target Support Files/Pods-My Apps/Pods-My Apps.release.xcconfig"; sourceTree = "<group>"; };
 		E8B81CB778ACE4C563B38177 /* Pods-My Apps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-My Apps.debug.xcconfig"; path = "Target Support Files/Pods-My Apps/Pods-My Apps.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -75,8 +81,11 @@
 			children = (
 				2B5308AB223BDD4A005BA0B4 /* AppDelegate.swift */,
 				2B53093E223BE00E005BA0B4 /* MyApp.swift */,
+				2B53094A223C01E1005BA0B4 /* MyAppResponse.swift */,
 				2B530946223BF65C005BA0B4 /* Networkable.swift */,
+				2B53094E223C095E005BA0B4 /* Common.swift */,
 				2B530948223BFEC5005BA0B4 /* RealmHelper.swift */,
+				2B53094C223C0223005BA0B4 /* ListTransform.swift */,
 				2B5308BD223BDE23005BA0B4 /* HomeTableViewController.swift */,
 				2B530940223BE205005BA0B4 /* AppTableViewCell.swift */,
 				2B530942223BE3F4005BA0B4 /* AddAppViewController.swift */,
@@ -248,10 +257,13 @@
 				2B530941223BE205005BA0B4 /* AppTableViewCell.swift in Sources */,
 				2B530943223BE3F4005BA0B4 /* AddAppViewController.swift in Sources */,
 				2B530947223BF65C005BA0B4 /* Networkable.swift in Sources */,
+				2B53094F223C095E005BA0B4 /* Common.swift in Sources */,
 				2B5308AC223BDD4A005BA0B4 /* AppDelegate.swift in Sources */,
 				2B530949223BFEC5005BA0B4 /* RealmHelper.swift in Sources */,
 				2B53093F223BE00E005BA0B4 /* MyApp.swift in Sources */,
 				2B530945223BE593005BA0B4 /* AppDetailsViewController.swift in Sources */,
+				2B53094D223C0223005BA0B4 /* ListTransform.swift in Sources */,
+				2B53094B223C01E1005BA0B4 /* MyAppResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

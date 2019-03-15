@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class AppDetailsViewController: UIViewController {
     
@@ -34,82 +35,24 @@ class AppDetailsViewController: UIViewController {
             return
         }
         updateUI()
-        getAppData()
+        getAppDetails()
     }
     
     func updateUI() {
-        appNameLabel.text = app?.name ?? ""
+        appNameLabel.text = app?.trackName ?? ""
         bundleIdLabel.text = app?.bundleId ?? ""
         sellerNameLabel.text = app?.sellerName ?? ""
         versionLabel.text = app?.version ?? ""
         releaseNotesLabel.text = app?.releaseNotes ?? ""
-        appDescriptionLabel.text = app?.description ?? ""
-        genreLabel.text = app?.genre ?? ""
-        releaseDateLabel.text = app?.releaseDateString ?? ""
-    }
-    
-    
-    func getAppData() {
-        guard let bundleId = app?.bundleId else {return}
-        guard let url = URL(string: "http://itunes.apple.com/lookup?bundleId=\(bundleId)") else {return}
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                if let jsonDictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String:Any] {
-                    guard let results = jsonDictionary["results"] as? [Any], !results.isEmpty else {return}
-                    guard let appDetails = results.first as? [String: Any] else {return}
-                    self.updateAppDetails(appDetails)
-                }
-            } catch {
-                print(error)
-            }
-        }
-        task.resume()
-    }
-    
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
-        URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
-    
-    func downloadImage(from url: URL) {
-        print("Image Download Started")
-        getData(from: url) { data, response, error in
-            guard let data = data, error == nil else { return }
-            print(response?.suggestedFilename ?? url.lastPathComponent)
-            print("Image Download Finished")
-            DispatchQueue.main.async() {
-                self.appImageView.image = UIImage(data: data)
-            }
-        }
-    }
-    
-    func updateAppDetails(_ appDetails: [String: Any]) {
-        guard let appName = appDetails["trackName"] as? String,
-            let bundleId = appDetails["bundleId"] as? String,
-            let sellerName = appDetails["sellerName"] as? String,
-            let version = appDetails["version"] as? String,
-            let releaseNotes = appDetails["releaseNotes"] as? String,
-            let description = appDetails["description"] as? String,
-            let primaryGenre = appDetails["primaryGenreName"] as? String,
-            let releaseDateString = appDetails["releaseDate"] as? String else {return}
-        
-        app?.name = appName
-        app?.bundleId = bundleId
-        app?.sellerName = sellerName
-        app?.version = version
-        app?.releaseNotes = releaseNotes
-        app?.appdDescription = description
-        app?.genre = primaryGenre
-        app?.releaseDateString = releaseDateString
-        updateUI()
-        
-        guard let artworkUrl512 = appDetails["artworkUrl512"] as? String,
-            let imageUrl = URL(string: artworkUrl512) else {return}
-        downloadImage(from: imageUrl)
+        appDescriptionLabel.text = app?.appDescription ?? ""
+        genreLabel.text = app?.primaryGenreName ?? ""
+        releaseDateLabel.text = app?.releaseDate ?? ""
+        guard let urlString = app?.artworkUrl512, let imageUrl = URL(string: urlString) else {return}
+        appImageView.af_setImage(withURL: imageUrl)
     }
     
     @IBAction func actionButtonTapped(_ sender: Any) {
-        getAppData()
+        getAppDetails()
     }
     
 
@@ -123,6 +66,17 @@ class AppDetailsViewController: UIViewController {
     }
     */
 
+}
+
+extension AppDetailsViewController: Requestable {
+    
+    func getAppDetails() {
+        guard let bundleId = app?.bundleId else {return}
+        Service.shared.getAppDetails(bundleId, mapType: MyAppResponse.self) { [unowned self]  (appResponse) in
+            self.app = appResponse.results.first
+            self.updateUI()
+        }
+    }
 }
 
 
