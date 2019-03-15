@@ -1,0 +1,63 @@
+PODS:
+  - Alamofire (4.8.1)
+  - AlamofireImage (3.5.0):
+    - Alamofire (~> 4.8)
+  - IQKeyboardManager (6.2.0)
+  - MJRefresh (3.1.15.7)
+  - ObjectMapper (3.3.0)
+  - PKHUD (5.2.1)
+  - R.swift (5.0.2):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.0)
+  - ReachabilitySwift (4.3.0)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
+  - SwiftLint (0.30.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5)
+  - AlamofireImage (~> 3.3)
+  - IQKeyboardManager
+  - MJRefresh
+  - ObjectMapper (~> 3.3.0)
+  - PKHUD
+  - R.swift
+  - ReachabilitySwift
+  - RealmSwift
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - IQKeyboardManager
+    - MJRefresh
+    - ObjectMapper
+    - PKHUD
+    - R.swift
+    - R.swift.Library
+    - ReachabilitySwift
+    - Realm
+    - RealmSwift
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  PKHUD: 4e6162c4c39ac367c6934e9855c6b4762ee16256
+  R.swift: 81455d81467763cbd3f4d79d938d05f4ac4c0228
+  R.swift.Library: 0bf390e729bc10bb2c9e4fb78bd043164a7be4ff
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  SwiftLint: a54bf1fe12b55c68560eb2a7689dfc81458508f7
+
+PODFILE CHECKSUM: 4ac7d292f8e86be78ce6ce05586942490a92c225
+
+COCOAPODS: 1.6.0

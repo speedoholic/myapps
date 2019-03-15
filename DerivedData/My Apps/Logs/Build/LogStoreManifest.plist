@@ -5,6 +5,152 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>12F34A76-AC56-4F3E-9B3C-189612069A21</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>12F34A76-AC56-4F3E-9B3C-189612069A21.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>My Apps project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>My Apps</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Clean My Apps</string>
+			<key>timeStartedRecording</key>
+			<real>574356545.38172996</real>
+			<key>timeStoppedRecording</key>
+			<real>574356546.54596603</real>
+			<key>title</key>
+			<string>Clean My Apps</string>
+			<key>uniqueIdentifier</key>
+			<string>12F34A76-AC56-4F3E-9B3C-189612069A21</string>
+		</dict>
+		<key>5B840450-59EA-4757-BCFE-81B102D30B5B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5B840450-59EA-4757-BCFE-81B102D30B5B.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>S</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>My Apps project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>My Apps</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Clean My Apps</string>
+			<key>timeStartedRecording</key>
+			<real>574356608.64392602</real>
+			<key>timeStoppedRecording</key>
+			<real>574356609.20113397</real>
+			<key>title</key>
+			<string>Clean My Apps</string>
+			<key>uniqueIdentifier</key>
+			<string>5B840450-59EA-4757-BCFE-81B102D30B5B</string>
+		</dict>
+		<key>BEEC9996-8400-4A26-9DC3-8C3467DAAD10</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BEEC9996-8400-4A26-9DC3-8C3467DAAD10.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>My Apps project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>My Apps</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build My Apps</string>
+			<key>timeStartedRecording</key>
+			<real>574357195.46940303</real>
+			<key>timeStoppedRecording</key>
+			<real>574357201.01573801</real>
+			<key>title</key>
+			<string>Build My Apps</string>
+			<key>uniqueIdentifier</key>
+			<string>BEEC9996-8400-4A26-9DC3-8C3467DAAD10</string>
+		</dict>
+		<key>C8B9954D-B82C-434C-AA46-61E025A36EF4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C8B9954D-B82C-434C-AA46-61E025A36EF4.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>My Apps project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>My Apps</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build My Apps</string>
+			<key>timeStartedRecording</key>
+			<real>574356614.28090501</real>
+			<key>timeStoppedRecording</key>
+			<real>574356655.57206404</real>
+			<key>title</key>
+			<string>Build My Apps</string>
+			<key>uniqueIdentifier</key>
+			<string>C8B9954D-B82C-434C-AA46-61E025A36EF4</string>
+		</dict>
+		<key>EB2949B4-2631-424B-90E5-472883466D56</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>EB2949B4-2631-424B-90E5-472883466D56.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>My Apps project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>My Apps</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build My Apps</string>
+			<key>timeStartedRecording</key>
+			<real>574357112.86931396</real>
+			<key>timeStoppedRecording</key>
+			<real>574357114.32460499</real>
+			<key>title</key>
+			<string>Build My Apps</string>
+			<key>uniqueIdentifier</key>
+			<string>EB2949B4-2631-424B-90E5-472883466D56</string>
+		</dict>
+	</dict>
 </dict>
 </plist>
